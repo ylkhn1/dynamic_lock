@@ -286,8 +286,7 @@ go test ./...   # no tests yet — PRs welcome
 
 ## License
 
-TBD — pick the license you prefer (`MIT`, `Apache-2.0`, etc.) and drop
-it in as `LICENSE` before publishing.
+[MIT](LICENSE) — do whatever you want, just keep the copyright notice.
 
 ## Contributing
 
