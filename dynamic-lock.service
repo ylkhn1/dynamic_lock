@@ -1,0 +1,24 @@
+# User-level systemd service — install to ~/.config/systemd/user/
+#
+#   mkdir -p ~/.config/systemd/user
+#   cp dynamic-lock.service ~/.config/systemd/user/
+#   systemctl --user daemon-reload
+#   systemctl --user enable --now dynamic-lock
+
+[Unit]
+Description=Dynamic Lock — Bluetooth-based screen locker
+Documentation=https://github.com/ylkhn/dynamic-lock
+After=bluetooth.target
+Wants=bluetooth.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/dynamic-lock-agent --config %h/.config/dynamic-lock/.env
+Restart=on-failure
+RestartSec=10s
+
+# loginctl and bluetoothctl need the user session bus.
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/%U/bus
+
+[Install]
+WantedBy=default.target

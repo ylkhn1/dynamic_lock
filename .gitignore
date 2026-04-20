@@ -1,0 +1,24 @@
+# Local configuration with secrets — keep .env.example / config.yaml.example instead
+.env
+config.yaml
+
+# Build artifacts
+/dynamic-lock-agent
+*.exe
+*.test
+*.out
+*.prof
+
+# Editors / IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Go build cache (local, not for vendored deps)
+/vendor/

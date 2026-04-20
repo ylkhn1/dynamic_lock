@@ -1,0 +1,11 @@
+device_mac: "AA:BB:CC:DD:EE:FF"   # replace with your phone's MAC
+check_interval: "5s"               # Go duration string: 5s, 10s, 1m
+fail_threshold: 3                  # consecutive misses before locking
+log_level: "info"                  # debug | info | warning | error
+
+# Telegram bot (optional). Leave bot_token empty to disable.
+# If bot_token is set, allowed_user_id MUST also be set — the agent
+# refuses to start without a whitelist.
+telegram:
+  bot_token: ""
+  allowed_user_id: 0
